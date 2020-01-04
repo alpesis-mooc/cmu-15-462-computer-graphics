@@ -1,0 +1,14 @@
+# python
+*.pyc
+
+# os
+.DS_Store
+
+# editor
+*.swp
+*.swm
+*.swn
+*.swo
+
+# build
+_build
