@@ -1,0 +1,40 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"build_systems":
+    [
+        {
+            "name": "gltutorial",
+            "cmd": ["(mkdir build || true) && cd build && cmake .. && make"],
+            "working_dir": "$project_path",
+            "selector": "source.c++",
+            "shell": true,
+            "variants": [
+            	{
+                    "name": "Clean",
+                    "working_dir": "$project_path",
+                    "cmd": ["rm -r build"]
+                },
+                {
+                    "name": "run",
+                    "working_dir": "$project_path/build/bin",
+                    "cmd": "./GLTutorial"
+                },
+                {
+                	"name": "teapot.obj",
+                	"working_dir": "$project_path/build/bin",
+                	"cmd": "./GLTutorial ../../obj/utah-teapot.obj"
+                },
+                {
+                    "name": "circle.obj",
+                    "working_dir": "$project_path/build/bin",
+                    "cmd": "./GLTutorial ../../obj/circle.obj"
+                }
+            ]
+        }
+    ]
+}
